@@ -1,4 +1,4 @@
-package com.jimenezict.bicing.getstationstatus.influx;
+package com.jimenezict.bicing.getstationstatus.influx.dto;
 
 public class InfluxRegisterDTO {
 

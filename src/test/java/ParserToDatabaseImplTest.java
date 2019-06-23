@@ -1,4 +1,4 @@
-import com.jimenezict.bicing.getstationstatus.influx.InfluxRegisterDTO;
+import com.jimenezict.bicing.getstationstatus.influx.dto.InfluxRegisterDTO;
 import com.jimenezict.bicing.getstationstatus.opendata.dto.Station;
 import com.jimenezict.bicing.getstationstatus.service.ParserToDatabase;
 import com.jimenezict.bicing.getstationstatus.service.ParserToDatabaseImpl;

@@ -1,6 +1,6 @@
 package com.jimenezict.bicing.getstationstatus.service;
 
-import com.jimenezict.bicing.getstationstatus.influx.InfluxRegisterDTO;
+import com.jimenezict.bicing.getstationstatus.influx.dto.InfluxRegisterDTO;
 import com.jimenezict.bicing.getstationstatus.opendata.dto.Station;
 import org.springframework.stereotype.Service;
 
