@@ -1,6 +1,6 @@
 package com.jimenezict.bicing.getstationstatus.service;
 
-import com.jimenezict.bicing.getstationstatus.influx.InfluxRegister;
+import com.jimenezict.bicing.getstationstatus.influx.InfluxRegisterDTO;
 import com.jimenezict.bicing.getstationstatus.opendata.dto.Station;
 import org.springframework.stereotype.Service;
 
@@ -11,23 +11,23 @@ import java.util.stream.Collectors;
 public class ParserToDatabaseImpl implements ParserToDatabase {
 
     @Override
-    public List<InfluxRegister> processListOfStationsToGetNumberOfAvailableDocks(List<Station> listOfStation) {
+    public List<InfluxRegisterDTO> processListOfStationsToGetNumberOfAvailableDocks(List<Station> listOfStation) {
         return listOfStation.stream()
-                .map(station -> new InfluxRegister(station.getStation_id(), station.getNum_docks_available()))
+                .map(station -> new InfluxRegisterDTO(station.getStation_id(), station.getNum_docks_available()))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public List<InfluxRegister> processListOfStationsToGetNumberOfAvailableBikes(List<Station> listOfStation) {
+    public List<InfluxRegisterDTO> processListOfStationsToGetNumberOfAvailableBikes(List<Station> listOfStation) {
         return listOfStation.stream()
-                .map(station -> new InfluxRegister(station.getStation_id(), station.getNum_bikes_available()))
+                .map(station -> new InfluxRegisterDTO(station.getStation_id(), station.getNum_bikes_available()))
                 .collect(Collectors.toList());
     }
 
     @Override
-    public List<InfluxRegister> processListOfStationsToGetUsePercentage(List<Station> listOfStation) {
+    public List<InfluxRegisterDTO> processListOfStationsToGetUsePercentage(List<Station> listOfStation) {
         return listOfStation.stream()
-                .map(station -> new InfluxRegister(station.getStation_id(), usageCalculation(station)))
+                .map(station -> new InfluxRegisterDTO(station.getStation_id(), usageCalculation(station)))
                 .collect(Collectors.toList());
     }
 

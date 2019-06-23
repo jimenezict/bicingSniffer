@@ -5,9 +5,8 @@ import org.influxdb.InfluxDBFactory;
 import org.influxdb.dto.Pong;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 
-public class InfluxConnectionSingletone {
+class InfluxConnectionSingletone {
 
     private static InfluxConnectionSingletone influxConnection;
     private static InfluxDB influxDB;

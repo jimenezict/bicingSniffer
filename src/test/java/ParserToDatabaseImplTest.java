@@ -1,4 +1,4 @@
-import com.jimenezict.bicing.getstationstatus.influx.InfluxRegister;
+import com.jimenezict.bicing.getstationstatus.influx.InfluxRegisterDTO;
 import com.jimenezict.bicing.getstationstatus.opendata.dto.Station;
 import com.jimenezict.bicing.getstationstatus.service.ParserToDatabase;
 import com.jimenezict.bicing.getstationstatus.service.ParserToDatabaseImpl;
@@ -33,21 +33,21 @@ public class ParserToDatabaseImplTest {
 
     @Test
     public void  processListOfStationsToGetNumberOfAvailableDocksTest(){
-        List<InfluxRegister> listOfInfluxRegister =
+        List<InfluxRegisterDTO> listOfInfluxRegister =
                 parserToDatabaseImplTest.processListOfStationsToGetNumberOfAvailableDocks(listOfStation);
         assertEquals(10, listOfInfluxRegister.get(1).getValue(),0.1);
     }
 
     @Test
     public void  processListOfStationsToGetNumberOfAvailableBikesTest(){
-        List<InfluxRegister> listOfInfluxRegister =
+        List<InfluxRegisterDTO> listOfInfluxRegister =
                 parserToDatabaseImplTest.processListOfStationsToGetNumberOfAvailableBikes(listOfStation);
         assertEquals(5, listOfInfluxRegister.get(1).getValue(),0.1);
     }
 
     @Test
     public void  processListOfStationsToGetUsePercentageTest(){
-        List<InfluxRegister> listOfInfluxRegister =
+        List<InfluxRegisterDTO> listOfInfluxRegister =
                 parserToDatabaseImplTest.processListOfStationsToGetUsePercentage(listOfStation);
         assertEquals(0.33, listOfInfluxRegister.get(1).getValue(),0.1);
     }

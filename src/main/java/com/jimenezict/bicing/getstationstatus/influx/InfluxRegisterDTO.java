@@ -1,11 +1,11 @@
 package com.jimenezict.bicing.getstationstatus.influx;
 
-public class InfluxRegister {
+public class InfluxRegisterDTO {
 
     private int id;
     private double value;
 
-    public InfluxRegister(int id, double value) {
+    public InfluxRegisterDTO(int id, double value) {
         this.id = id;
         this.value = value;
     }
