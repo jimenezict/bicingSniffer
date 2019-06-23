@@ -1,0 +1,55 @@
+import com.jimenezict.bicing.getstationstatus.influx.InfluxRegister;
+import com.jimenezict.bicing.getstationstatus.opendata.dto.Station;
+import com.jimenezict.bicing.getstationstatus.service.ParserToDatabase;
+import com.jimenezict.bicing.getstationstatus.service.ParserToDatabaseImpl;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+public class ParserToDatabaseImplTest {
+
+    private ParserToDatabase parserToDatabaseImplTest;
+    private List<Station> listOfStation;
+
+    @Before
+    public void init(){
+        parserToDatabaseImplTest = new ParserToDatabaseImpl();
+        listOfStation = new ArrayList<>();
+        listOfStation.add(stationBuilder(1, 10, 5));
+        listOfStation.add(stationBuilder(2, 5, 10));
+    }
+
+    private Station stationBuilder(int id, int available, int docks){
+        Station station = new Station();
+        station.setStation_id(id);
+        station.setNum_bikes_available(available);
+        station.setNum_docks_available(docks);
+        return station;
+    }
+
+    @Test
+    public void  processListOfStationsToGetNumberOfAvailableDocksTest(){
+        List<InfluxRegister> listOfInfluxRegister =
+                parserToDatabaseImplTest.processListOfStationsToGetNumberOfAvailableDocks(listOfStation);
+        assertEquals(10, listOfInfluxRegister.get(1).getValue(),0.1);
+    }
+
+    @Test
+    public void  processListOfStationsToGetNumberOfAvailableBikesTest(){
+        List<InfluxRegister> listOfInfluxRegister =
+                parserToDatabaseImplTest.processListOfStationsToGetNumberOfAvailableBikes(listOfStation);
+        assertEquals(5, listOfInfluxRegister.get(1).getValue(),0.1);
+    }
+
+    @Test
+    public void  processListOfStationsToGetUsePercentageTest(){
+        List<InfluxRegister> listOfInfluxRegister =
+                parserToDatabaseImplTest.processListOfStationsToGetUsePercentage(listOfStation);
+        assertEquals(0.33, listOfInfluxRegister.get(1).getValue(),0.1);
+    }
+}
