@@ -24,6 +24,18 @@ public class RealTimeStationBicing {
     public void reportCurrentTime() {
         log.info("The time is now {}", dateFormat.format(new Date()));
         StationStatus stationStatus= getTheOccupacyOfTheStations();
+        generateAvailableStationCollection(stationStatus);
+        generateBikesByStationCollection(stationStatus);
+        generateUsePercentageCollection(stationStatus);
+    }
+
+    private void generateUsePercentageCollection(StationStatus stationStatus) {
+    }
+
+    private void generateBikesByStationCollection(StationStatus stationStatus) {
+    }
+
+    private void generateAvailableStationCollection(StationStatus stationStatus) {
     }
 
     private StationStatus getTheOccupacyOfTheStations() {

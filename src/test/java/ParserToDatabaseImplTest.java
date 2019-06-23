@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class ParserToDatabaseImplTest {
 
@@ -24,11 +23,11 @@ public class ParserToDatabaseImplTest {
         listOfStation.add(stationBuilder(2, 5, 10));
     }
 
-    private Station stationBuilder(int id, int available, int docks){
+    private Station stationBuilder(int id, int available, int docksfree){
         Station station = new Station();
         station.setStation_id(id);
         station.setNum_bikes_available(available);
-        station.setNum_docks_available(docks);
+        station.setNum_docks_available(docksfree);
         return station;
     }
 

@@ -32,6 +32,6 @@ public class ParserToDatabaseImpl implements ParserToDatabase {
     }
 
     private double usageCalculation(Station station) {
-        return (station.getNum_bikes_available()) / (station.getNum_bikes_available() + station.getNum_docks_available());
+        return (double)(station.getNum_bikes_available()) / (station.getNum_bikes_available() + station.getNum_docks_available());
     }
 }
