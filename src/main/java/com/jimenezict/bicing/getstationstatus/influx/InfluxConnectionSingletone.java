@@ -8,26 +8,27 @@ import org.slf4j.LoggerFactory;
 
 class InfluxConnectionSingletone {
 
-    private static InfluxConnectionSingletone influxConnection;
     private static InfluxDB influxDB;
     private static Logger log = LoggerFactory.getLogger(InfluxConnectionSingletone.class);
 
     private String connectionString = "http://localhost:8086";
+    private String database = "bicing";
 
     private InfluxConnectionSingletone(){
         influxDB = InfluxDBFactory.connect(connectionString);
-        influxDB.createDatabase("bicing");
+        influxDB.createDatabase(database);
         influxDB.createRetentionPolicy("defaultPolicy", "bicing", "30d", 1, true);
         influxDB.setLogLevel(InfluxDB.LogLevel.BASIC);
+        influxDB.setDatabase(database);
     }
 
-    public static InfluxConnectionSingletone getInstance(){
-        if(influxConnection == null){
+    public static InfluxDB getInstance(){
+        if(influxDB == null){
             log.info("Created a new Connection Singlentone");
-            influxConnection = new InfluxConnectionSingletone();
+            new InfluxConnectionSingletone();
         }
         testConnection();
-        return influxConnection;
+        return influxDB;
     }
 
     private static void testConnection(){
