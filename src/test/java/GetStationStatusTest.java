@@ -1,5 +1,5 @@
-import com.jimenezict.bicing.getstationstatus.GetStationsStatus;
-import com.jimenezict.bicing.getstationstatus.GetStationsStatusImpl;
+import com.jimenezict.bicing.getstationstatus.opendata.GetStationsStatus;
+import com.jimenezict.bicing.getstationstatus.opendata.GetStationsStatusImpl;
 import org.junit.Before;
 import org.junit.Test;
 

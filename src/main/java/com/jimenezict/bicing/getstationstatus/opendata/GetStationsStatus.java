@@ -1,6 +1,6 @@
-package com.jimenezict.bicing.getstationstatus;
+package com.jimenezict.bicing.getstationstatus.opendata;
 
-import com.jimenezict.bicing.getstationstatus.dto.StationStatus;
+import com.jimenezict.bicing.getstationstatus.opendata.dto.StationStatus;
 import org.springframework.stereotype.Service;
 
 @Service

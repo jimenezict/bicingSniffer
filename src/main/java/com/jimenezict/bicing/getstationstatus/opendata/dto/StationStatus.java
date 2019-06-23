@@ -1,4 +1,4 @@
-package com.jimenezict.bicing.getstationstatus.dto;
+package com.jimenezict.bicing.getstationstatus.opendata.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
