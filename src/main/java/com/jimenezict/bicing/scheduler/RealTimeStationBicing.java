@@ -31,7 +31,7 @@ public class RealTimeStationBicing {
     @Autowired
     private InsertToDatabase insertToDatabase;
 
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 30000)
     public void reportCurrentTime() {
         log.info("The time is now {}", dateFormat.format(new Date()));
         List<Station> listOfStation = getTheListOfTheStationsStatus();
@@ -41,17 +41,20 @@ public class RealTimeStationBicing {
     }
 
     private void insertAvailableDocksStationCollectionMetrics( List<Station> listOfStation) {
-        List<InfluxRegisterDTO> listOfValues = parserToDatabase.processListOfStationsToGetNumberOfAvailableDocks(listOfStation);
+        List<InfluxRegisterDTO> listOfValues =
+                parserToDatabase.processListOfStationsToGetNumberOfAvailableDocks(listOfStation);
         insertToDatabase.insertListOfStationsToGetNumberOfAvailableDocks(listOfValues);
     }
 
     private void insertBikesByStationCollectionMetrics( List<Station> stationStatus) {
-        List<InfluxRegisterDTO> listOfValues = parserToDatabase.processListOfStationsToGetNumberOfAvailableBikes(stationStatus);
+        List<InfluxRegisterDTO> listOfValues =
+                parserToDatabase.processListOfStationsToGetNumberOfAvailableBikes(stationStatus);
         insertToDatabase.insertListOfStationsToGetNumberOfAvailableBikes(listOfValues);
     }
 
     private void insertUsePercentageCollectionMetrics( List<Station> stationStatus) {
-        List<InfluxRegisterDTO> listOfValues = parserToDatabase.processListOfStationsToGetUsePercentage(stationStatus);
+        List<InfluxRegisterDTO> listOfValues =
+                parserToDatabase.processListOfStationsToGetUsePercentage(stationStatus);
         insertToDatabase.insertListOfStationsToGetUsePercentage(listOfValues);
     }
 

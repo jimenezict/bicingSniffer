@@ -17,7 +17,7 @@ public class InsertInfluxRegisterDTObyMeasureTest {
     @Test
     public void insertRegisterOfAvailabilityOnFirstStationOnInfluxRegisterDAO(){
         InfluxRegisterDTO register = new InfluxRegisterDTO(1,15.0);
-        influxRegisterDAO.insertInfluxRegisterDTOByMeasure("available",register);
+        influxRegisterDAO.insertInfluxRegisterDTOByMeasure("AvailableDocksTesting",register);
     }
 
 }
