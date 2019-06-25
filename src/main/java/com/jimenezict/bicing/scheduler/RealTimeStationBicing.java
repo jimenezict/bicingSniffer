@@ -34,10 +34,15 @@ public class RealTimeStationBicing {
     @Scheduled(fixedRate = 30000)
     public void reportCurrentTime() {
         log.info("The time is now {}", dateFormat.format(new Date()));
-        List<Station> listOfStation = getTheListOfTheStationsStatus();
-        insertAvailableDocksStationCollectionMetrics(listOfStation);
-        insertBikesByStationCollectionMetrics(listOfStation);
-        insertUsePercentageCollectionMetrics(listOfStation);
+        List<Station> listOfStation;
+        try {
+            listOfStation = getTheListOfTheStationsStatus();
+            insertAvailableDocksStationCollectionMetrics(listOfStation);
+            insertBikesByStationCollectionMetrics(listOfStation);
+            insertUsePercentageCollectionMetrics(listOfStation);
+        }catch(Exception e){
+            log.error("Communication fails to BSM");
+        }
     }
 
     private void insertAvailableDocksStationCollectionMetrics( List<Station> listOfStation) {
