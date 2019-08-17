@@ -28,8 +28,7 @@ public class GetStationStatusTest {
 
     @Test
     public void CountStations(){
-        assertEquals(407,getStationsStatus.getStationStatus().getData().getStations().size());
+        assertEquals(410,getStationsStatus.getStationStatus().getData().getStations().size());
     }
-
 
 }
