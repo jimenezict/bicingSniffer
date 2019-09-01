@@ -22,14 +22,19 @@ public class RealTimeStationBicing {
     private static final Logger log = LoggerFactory.getLogger(RealTimeStationBicing.class);
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
-    @Autowired
-    private BicingApiCall bicingApiCall;
+    BicingApiCall bicingApiCall;
 
-    @Autowired
-    private ParserToDatabase parserToDatabase;
+    ParserToDatabase parserToDatabase;
 
-    @Autowired
-    private InsertToDatabase insertToDatabase;
+    InsertToDatabase insertToDatabase;
+
+    public RealTimeStationBicing(final BicingApiCall bicingApiCall,
+                                 final ParserToDatabase parserToDatabase,
+                                 final InsertToDatabase insertToDatabase) {
+        this.bicingApiCall = bicingApiCall;
+        this.parserToDatabase = parserToDatabase;
+        this.insertToDatabase = insertToDatabase;
+    }
 
     @Scheduled(fixedRate = 30000)
     public void reportCurrentTime() {
