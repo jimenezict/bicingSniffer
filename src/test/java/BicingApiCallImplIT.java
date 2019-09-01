@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 
-public class BicingApiCallTest {
+public class BicingApiCallImplIT {
 
     private BicingApiCall underTest;
 
