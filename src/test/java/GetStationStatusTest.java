@@ -1,5 +1,5 @@
-import com.jimenezict.bicing.getstationstatus.opendata.GetStationsStatus;
-import com.jimenezict.bicing.getstationstatus.opendata.GetStationsStatusImpl;
+import com.jimenezict.bicing.getstationstatus.bcnopendata.BicingApiCall;
+import com.jimenezict.bicing.getstationstatus.bcnopendata.BicingApiCallImpl;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,26 +9,26 @@ import static org.junit.Assert.assertTrue;
 
 public class GetStationStatusTest {
 
-    private GetStationsStatus getStationsStatus;
+    private BicingApiCall bicingApiCall;
 
     @Before
     public void init(){
-        getStationsStatus = new GetStationsStatusImpl();
+        bicingApiCall = new BicingApiCallImpl();
     }
 
     @Test
     public void GetStationStatusLastUpdated(){
-        assertTrue(getStationsStatus.getStationStatus().getLast_updated() > 1561116149l);
+        assertTrue(bicingApiCall.getStationStatus().getLast_updated() > 1561116149l);
     }
 
     @Test
     public void GetStationStatusTTL(){
-        assertTrue(getStationsStatus.getStationStatus().getTtl() > 0);
+        assertTrue(bicingApiCall.getStationStatus().getTtl() > 0);
     }
 
     @Test
     public void CountStations(){
-        assertEquals(410,getStationsStatus.getStationStatus().getData().getStations().size());
+        assertEquals(410, bicingApiCall.getStationStatus().getData().getStations().size());
     }
 
 }

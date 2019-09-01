@@ -1,4 +1,4 @@
-package com.jimenezict.bicing.getstationstatus.opendata.dto;
+package com.jimenezict.bicing.getstationstatus.bcnopendata.dto;
 
 public class Station {
 

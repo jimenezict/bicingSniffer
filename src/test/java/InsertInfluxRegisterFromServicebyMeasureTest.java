@@ -4,6 +4,7 @@ import com.jimenezict.bicing.getstationstatus.influx.dto.InfluxRegisterDTO;
 import com.jimenezict.bicing.getstationstatus.service.InsertToDatabase;
 import com.jimenezict.bicing.getstationstatus.service.InsertToDatabaseImpl;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -23,6 +24,7 @@ public class InsertInfluxRegisterFromServicebyMeasureTest {
     }
 
     @Test
+    @Ignore
     public void insertRegisterOfAvailabilityOnFirstStationOnInfluxRegisterDAO(){
         List<InfluxRegisterDTO> influxRegisterDTOS = new ArrayList<>();
         influxRegisterDTOS.add( new InfluxRegisterDTO(1000,15.0));

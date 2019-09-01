@@ -1,11 +1,11 @@
-package com.jimenezict.bicing.getstationstatus.opendata;
+package com.jimenezict.bicing.getstationstatus.bcnopendata;
 
-import com.jimenezict.bicing.getstationstatus.opendata.dto.StationStatus;
+import com.jimenezict.bicing.getstationstatus.bcnopendata.dto.StationStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class GetStationsStatusImpl implements GetStationsStatus {
+public class BicingApiCallImpl implements BicingApiCall {
 
     private final String url = "https://api.bsmsa.eu/ext/api/bsm/gbfs/v2/en/station_status";
 

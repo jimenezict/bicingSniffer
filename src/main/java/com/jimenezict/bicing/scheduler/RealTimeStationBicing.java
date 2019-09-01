@@ -1,9 +1,9 @@
 package com.jimenezict.bicing.scheduler;
 
 import com.jimenezict.bicing.getstationstatus.influx.dto.InfluxRegisterDTO;
-import com.jimenezict.bicing.getstationstatus.opendata.GetStationsStatus;
-import com.jimenezict.bicing.getstationstatus.opendata.dto.Station;
-import com.jimenezict.bicing.getstationstatus.opendata.dto.StationStatus;
+import com.jimenezict.bicing.getstationstatus.bcnopendata.BicingApiCall;
+import com.jimenezict.bicing.getstationstatus.bcnopendata.dto.Station;
+import com.jimenezict.bicing.getstationstatus.bcnopendata.dto.StationStatus;
 import com.jimenezict.bicing.getstationstatus.service.InsertToDatabase;
 import com.jimenezict.bicing.getstationstatus.service.ParserToDatabase;
 import org.slf4j.Logger;
@@ -23,7 +23,7 @@ public class RealTimeStationBicing {
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
     @Autowired
-    private GetStationsStatus getStationsStatus;
+    private BicingApiCall bicingApiCall;
 
     @Autowired
     private ParserToDatabase parserToDatabase;
@@ -64,7 +64,7 @@ public class RealTimeStationBicing {
     }
 
     private List<Station> getTheListOfTheStationsStatus() {
-        StationStatus stationStatus = getStationsStatus.getStationStatus();
+        StationStatus stationStatus = bicingApiCall.getStationStatus();
         log.info("The last update is {} and the {}", stationStatus.getLast_updated(),stationStatus.getTtl());
         return stationStatus.getData().getStations();
     }
