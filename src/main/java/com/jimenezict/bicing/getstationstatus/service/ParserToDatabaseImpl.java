@@ -1,7 +1,7 @@
 package com.jimenezict.bicing.getstationstatus.service;
 
 import com.jimenezict.bicing.getstationstatus.influx.dto.InfluxRegisterDTO;
-import com.jimenezict.bicing.getstationstatus.bcnopendata.dto.Station;
+import com.jimenezict.bicing.bcnopendata.dto.Station;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

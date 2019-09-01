@@ -1,9 +1,9 @@
 package com.jimenezict.bicing.scheduler;
 
 import com.jimenezict.bicing.getstationstatus.influx.dto.InfluxRegisterDTO;
-import com.jimenezict.bicing.getstationstatus.bcnopendata.BicingApiCall;
-import com.jimenezict.bicing.getstationstatus.bcnopendata.dto.Station;
-import com.jimenezict.bicing.getstationstatus.bcnopendata.dto.StationStatus;
+import com.jimenezict.bicing.bcnopendata.BicingApiCall;
+import com.jimenezict.bicing.bcnopendata.dto.Station;
+import com.jimenezict.bicing.bcnopendata.dto.StationStatus;
 import com.jimenezict.bicing.getstationstatus.service.InsertToDatabase;
 import com.jimenezict.bicing.getstationstatus.service.ParserToDatabase;
 import org.slf4j.Logger;

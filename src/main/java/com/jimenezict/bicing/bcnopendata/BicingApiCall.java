@@ -1,6 +1,6 @@
-package com.jimenezict.bicing.getstationstatus.bcnopendata;
+package com.jimenezict.bicing.bcnopendata;
 
-import com.jimenezict.bicing.getstationstatus.bcnopendata.dto.StationStatus;
+import com.jimenezict.bicing.bcnopendata.dto.StationStatus;
 import org.springframework.stereotype.Service;
 
 @Service

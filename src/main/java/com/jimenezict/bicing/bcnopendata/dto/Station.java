@@ -1,4 +1,4 @@
-package com.jimenezict.bicing.getstationstatus.bcnopendata.dto;
+package com.jimenezict.bicing.bcnopendata.dto;
 
 public class Station {
 

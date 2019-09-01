@@ -1,5 +1,5 @@
-import com.jimenezict.bicing.getstationstatus.bcnopendata.BicingApiCall;
-import com.jimenezict.bicing.getstationstatus.bcnopendata.BicingApiCallImpl;
+import com.jimenezict.bicing.bcnopendata.BicingApiCall;
+import com.jimenezict.bicing.bcnopendata.BicingApiCallImpl;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,26 +9,27 @@ import static org.junit.Assert.assertTrue;
 
 public class BicingApiCallTest {
 
-    private BicingApiCall bicingApiCall;
+    private BicingApiCall underTest;
 
     @Before
     public void init(){
-        bicingApiCall = new BicingApiCallImpl();
+        underTest = new BicingApiCallImpl();
     }
 
     @Test
-    public void GetStationStatusLastUpdated(){
-        assertTrue(bicingApiCall.getStationStatus().getLast_updated() > 1561116149l);
+    public void getStationStatus_validatesLastUpdateIsOnThePass_whenCallsToTheAPI(){
+        assertTrue(underTest.getStationStatus().getLast_updated() > 1561116149l);
+        underTest.getStationStatus().getLast_updated();
     }
 
     @Test
-    public void GetStationStatusTTL(){
-        assertTrue(bicingApiCall.getStationStatus().getTtl() > 0);
+    public void getStationStatus_validatesThatTTLisMajorThanZero_whenCallsToTheAPI(){
+        assertTrue(underTest.getStationStatus().getTtl() > 0);
     }
 
     @Test
-    public void CountStations(){
-        assertEquals(410, bicingApiCall.getStationStatus().getData().getStations().size());
+    public void getStationStatus_validatesTheNumberOfStation_whenCallsToTheAPI(){
+        assertEquals(410, underTest.getStationStatus().getData().getStations().size());
     }
 
 }
