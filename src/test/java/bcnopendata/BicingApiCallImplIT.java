@@ -1,3 +1,5 @@
+package bcnopendata;
+
 import com.jimenezict.bicing.bcnopendata.BicingApiCall;
 import com.jimenezict.bicing.bcnopendata.BicingApiCallImpl;
 import org.junit.Before;

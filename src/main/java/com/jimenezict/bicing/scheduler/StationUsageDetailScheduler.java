@@ -8,7 +8,6 @@ import com.jimenezict.bicing.getstationstatus.service.InsertToDatabase;
 import com.jimenezict.bicing.getstationstatus.service.ParserToDatabase;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
@@ -17,9 +16,9 @@ import java.util.Date;
 import java.util.List;
 
 @Component
-public class RealTimeStationBicing {
+public class StationUsageDetailScheduler {
 
-    private static final Logger log = LoggerFactory.getLogger(RealTimeStationBicing.class);
+    private static final Logger log = LoggerFactory.getLogger(StationUsageDetailScheduler.class);
     private static final SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 
     BicingApiCall bicingApiCall;
@@ -28,9 +27,9 @@ public class RealTimeStationBicing {
 
     InsertToDatabase insertToDatabase;
 
-    public RealTimeStationBicing(final BicingApiCall bicingApiCall,
-                                 final ParserToDatabase parserToDatabase,
-                                 final InsertToDatabase insertToDatabase) {
+    public StationUsageDetailScheduler(final BicingApiCall bicingApiCall,
+                                       final ParserToDatabase parserToDatabase,
+                                       final InsertToDatabase insertToDatabase) {
         this.bicingApiCall = bicingApiCall;
         this.parserToDatabase = parserToDatabase;
         this.insertToDatabase = insertToDatabase;

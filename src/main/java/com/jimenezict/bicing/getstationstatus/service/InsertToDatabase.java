@@ -8,9 +8,9 @@ import java.util.List;
 @Service
 public interface InsertToDatabase {
 
-    public void insertListOfStationsToGetNumberOfAvailableDocks(List<InfluxRegisterDTO> listOfStation);
+    void insertListOfStationsToGetNumberOfAvailableDocks(List<InfluxRegisterDTO> listOfStation);
 
-    public void insertListOfStationsToGetNumberOfAvailableBikes(List<InfluxRegisterDTO> listOfStation);
+    void insertListOfStationsToGetNumberOfAvailableBikes(List<InfluxRegisterDTO> listOfStation);
 
-    public void insertListOfStationsToGetUsePercentage(List<InfluxRegisterDTO> listOfStation);
+    void insertListOfStationsToGetUsePercentage(List<InfluxRegisterDTO> listOfStation);
 }
