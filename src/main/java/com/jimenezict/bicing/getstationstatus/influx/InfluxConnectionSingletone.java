@@ -17,7 +17,7 @@ class InfluxConnectionSingletone {
     private InfluxConnectionSingletone(){
         influxDB = InfluxDBFactory.connect(connectionString);
         influxDB.createDatabase(database);
-        influxDB.createRetentionPolicy("defaultPolicy", "bicing", "30d", 1, true);
+        influxDB.createRetentionPolicy("defaultPolicy", "bicing", "3d", 1, true);
         influxDB.setLogLevel(InfluxDB.LogLevel.BASIC);
         influxDB.setDatabase(database);
     }

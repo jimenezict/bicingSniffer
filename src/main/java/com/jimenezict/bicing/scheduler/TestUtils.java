@@ -11,7 +11,7 @@ public class TestUtils {
 
     public static StationStatus buildStationStatus(){
         StationStatus stationStatus = new StationStatus();
-        List<Station> stationList = new ArrayList<>(0);
+        List<Station> stationList  = new ArrayList<>(0);
         stationList.add(station(10, 10, 1));
         stationList.add(station(10, 10, 2));
         stationList.add(station(10, 10, 3));
